@@ -1,10 +1,13 @@
-import Head from 'next/head'
+"use client";
+
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { abrilFatface, mulish } from './fonts';
+import Header from './components/Header';
+import { LinkButton } from './components/Button';
+import Highlight from './components/Highlight';
 
 export default function Home() {
-  const [activeProject, setActiveProject] = useState(null)
 
   const projects = [
     {
@@ -47,47 +50,23 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>Fahmida Ara | Backend Engineer</title>
-        <meta name="description" content="Backend Developer and API Engineer specializing in developing highly efficient REST APIs" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <main className="min-h-screen">
         {/* Header */}
-        <header className="container mx-auto px-6 py-8">
-          <nav className="flex justify-between items-center">
-            <div className="text-2xl font-bold text-white">
-              Fahmida Ara
-            </div>
-            <div className="flex space-x-6">
-              <Link href="#work" className="text-gray-300 hover:text-white transition-colors">
-                Work
-              </Link>
-              <Link href="#skills" className="text-gray-300 hover:text-white transition-colors">
-                Skills
-              </Link>
-              <Link href="#contact" className="text-gray-300 hover:text-white transition-colors">
-                Contact
-              </Link>
-            </div>
-          </nav>
-        </header>
+        <Header />
 
         {/* Hero Section */}
-        <section className="container mx-auto px-6 py-16 text-center">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Hi, I'm Fahmida,
-            </h1>
-            <h2 className="text-3xl md:text-4xl text-purple-300 mb-8">
-              Backend Developer and API Engineer
-            </h2>
-            <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-              I specialize in developing highly efficient REST APIs that seamlessly integrate with complex database systems. My expertise centers around crafting data-driven solutions, merging in-depth knowledge of API development with robust database architecture to build scalable systems.
-            </p>
+        <section className="px-16 py-8 bg-amber-50">
+          <div className="w-5/7 mt-8">
+            <p className={`${abrilFatface.className} text-8xl font-bold`}>Hi, I'm Sinthia, <Highlight>Backend</Highlight> Developer and <span className='highlight'>API</span> Engineer.</p>
           </div>
+
+          <div className={`${mulish.className} w-3/5 my-10`}>
+            <p className='font-semibold text-lg'>I specialize in developing highly efficient REST APIs that seamlessly integrate with complex database systems. My expertise centers around crafting data-driven solutions, merging in-depth knowledge of API development with robust database architecture to build scalable systems.</p>
+          </div>
+          <LinkButton
+            url='#works'
+            text='See my works'
+          />
         </section>
 
         {/* Projects Section */}
