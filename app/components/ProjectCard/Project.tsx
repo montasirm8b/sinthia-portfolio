@@ -56,7 +56,7 @@ const Project = ({
                 alt={title}
                 width={500}
                 height={300}
-                className="w-full h-auto rounded-lg"
+                className="w-full h-auto"
               />
             </div>
           </div>
